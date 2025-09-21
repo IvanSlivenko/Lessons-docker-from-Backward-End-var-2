@@ -1,0 +1,10 @@
+services:
+  my-awesome-site:
+    image: nginx:alpine
+    ports:
+      - "81:80"
+    volumes:
+      - nginx-data:/usr/share/nginx/html
+
+volumes:
+  nginx-data:

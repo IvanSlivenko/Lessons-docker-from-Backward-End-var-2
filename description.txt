@@ -1,0 +1,52 @@
+https://youtu.be/4fLUc3hHKp4
+
+docker-compose.yaml
+---------------------------
+services:
+  my-awesome-site:
+    image: nginx:alpine
+    ports:
+      - "81:80"
+    volumes:
+      - nginx-data:/usr/share/nginx/html
+      
+volumes:
+  nginx-data:
+  ------------------------------------
+
+  docker-compose up
+  docker-compose up -d
+
+  docker-compose ports
+  docker-compose stop
+
+  docker-compose ps
+  docker-compose ps -a
+
+  docker-compose down
+
+  docker-compose up -d
+
+  docker stats
+
+
+------------------------------------------------- db-example 11 : 13
+
+----------------------------------- server "local"
+POSTGRES_USER=root
+POSTGRES_PASSWORD=root
+
+
+--------------------------------------------------pgAdmin
+PGADMIN_DEFAULT_EMAIL=umanproger@ukr.net
+PGADMIN_DEFAULT_PASSWORD=admin
+
+docker-compose up -d
+
+
+docker image ls ------------------------------------ перегляд images
+
+
+---------------------------------
+00 : 00 : 00
+

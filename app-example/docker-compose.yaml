@@ -1,0 +1,29 @@
+name: node-api
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: my-backend:${BACKEND_VERSION}
+    container_name: node-api-backend
+    restart: unless-stopped
+    networks:
+      - node-api-network
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@db:5432/test-api?schema=public"
+
+  db:
+    image: postgres:alpine
+    container_name: node-api-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test-api
+    networks:
+      - node-api-network
+
+networks:
+  node-api-network:
+    driver: bridge
